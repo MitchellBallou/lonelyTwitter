@@ -10,7 +10,6 @@ import java.util.Date;
 public abstract class Mood implements MoodDependentFormatMethod {
     private String message;
     private Date date;
-    private ArrayList Mood;
 
 
     public Mood(String message){
