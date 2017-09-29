@@ -1,3 +1,13 @@
+/*
+ * Class Name: LonelyTwitterActivity
+ *
+ * Version: Version 1.0
+ *
+ * Date: September 28, 2017
+ *
+ * Copyright (c) Team X, CMPUT301, University of Alberta - All Rights Reserved. You may use, distribute, or modify this code under terms and conditions of the Code of Students Behavior at University of Alberta
+ */
+
 package ca.ualberta.cs.lonelytwitter;
 
 import java.io.BufferedReader;
@@ -24,6 +34,16 @@ import android.widget.ListView;
 import com.google.gson.Gson;
 import com.google.gson.reflect.TypeToken;
 
+
+/**
+ * Controls action for Twitter app
+ *
+ * @author Mitchell Ballou
+ * @version 1.0
+ * @see Tweet
+ * @since 1.0
+ */
+
 public class LonelyTwitterActivity extends Activity {
 
 	private static final String FILENAME = "file.sav";
@@ -33,7 +53,10 @@ public class LonelyTwitterActivity extends Activity {
 	private ArrayList<Tweet> tweets = new ArrayList<Tweet>();
 	private ArrayAdapter<Tweet> adapter;
 
-	/** Called when the activity is first created. */
+	/** Called when the activity is first created.
+	 *
+	 * @param savedInstanceState
+	 */
 	@Override
 	public void onCreate(Bundle savedInstanceState) {
 		super.onCreate(savedInstanceState);
@@ -66,6 +89,10 @@ public class LonelyTwitterActivity extends Activity {
 		});
 	}
 
+	/**
+	 * Overrides object onStart
+	 * calls loadFromFile and creates tweet Array
+	 */
 	@Override
 	protected void onStart() {
 		// TODO Auto-generated method stub
@@ -76,6 +103,11 @@ public class LonelyTwitterActivity extends Activity {
 		oldTweetsList.setAdapter(adapter);
 	}
 
+	/**
+	 * Loads from file
+	 *
+	 * loads tweets from Json to tweet array
+	 */
 	private void loadFromFile() {
 
 		try {
@@ -96,7 +128,10 @@ public class LonelyTwitterActivity extends Activity {
 			throw new RuntimeException();
 		}
 	}
-	
+
+	/**
+	 * Saves tweets to Json
+	 */
 	private void saveInFile() {
 		try {
 			FileOutputStream fos = openFileOutput(FILENAME,
@@ -115,6 +150,9 @@ public class LonelyTwitterActivity extends Activity {
 		}
 	}
 
+	/**
+	 * clears Json file
+	 */
 	private void clearFile(){
 		try {
 			FileOutputStream fos = openFileOutput(FILENAME,
