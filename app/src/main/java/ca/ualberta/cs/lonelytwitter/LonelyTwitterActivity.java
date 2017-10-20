@@ -72,6 +72,7 @@ public class LonelyTwitterActivity extends Activity {
 		oldTweetsList.setOnItemClickListener(new AdapterView.OnItemClickListener() {
 			public void onItemClick(AdapterView<?> parent, View view, int position, long id) {
 				Intent intent = new Intent(activity, EditTweetActivity.class);
+				intent.putExtra("Tweet Message", tweetList.get(position).getMessage());
 				startActivity(intent);
 			}
 		});
