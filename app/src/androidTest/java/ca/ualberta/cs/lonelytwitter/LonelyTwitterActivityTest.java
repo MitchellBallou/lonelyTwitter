@@ -60,7 +60,7 @@ public class LonelyTwitterActivityTest extends ActivityInstrumentationTestCase2<
         solo.goBack();
         solo.assertCurrentActivity("wrong activity", LonelyTwitterActivity.class);
 
-        
+
     }
 
     @Override
